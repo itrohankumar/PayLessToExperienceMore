@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #0f172a;
+  background-color: #ffffff;
+}
+
+@keyframes fly-across {
+  0%   { transform: translate3d(-15vw, 0, 0) rotate(-2deg); }
+  50%  { transform: translate3d(50vw, -10px, 0) rotate(2deg); }
+  100% { transform: translate3d(115vw, 0, 0) rotate(-2deg); }
+}
+
+.animate-fly-across {
+  animation: fly-across 16s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fly-across {
+    animation: none;
+  }
+}
